@@ -35,7 +35,15 @@ public class Topico {
     private Autor autor;
 
     @Embedded
-    private ArrayList<Curso> curso;
+    private Curso curso;
 
 
+    public Topico(DadosCadastroTopico dados) {
+        this.titulo = dados.titulo();
+        this.mensagem = dados.mensagem();
+        this.dataDeCriacao = dados.dataDeCriacao();
+        this.estadoDoTopico = dados.estadoDoTopico();
+        this.autor = dados.autor();
+        this.curso = new Curso(dados.curso());
+    }
 }

@@ -15,4 +15,8 @@ public class Curso {
 
 
     private String nomeCurso;
+
+    public Curso(DadosCurso curso) {
+        this.nomeCurso = curso.nomeCurso();
+    }
 }
