@@ -1,7 +1,7 @@
 
 # Fórum Hub
 ###  Oferecimento ALURA + ORACLE 🚀
-O Fórum Hub é uma API que serve para aplicações que necessitam de um fórum de dúvidas que possam ser solucionadas por qualquer na comunidade.
+O Fórum Hub é uma API que serve para aplicações que necessitam de um fórum de dúvidas que possam ser solucionadas por qualquer um da comunidade.
 
 
 
@@ -9,6 +9,11 @@ O Fórum Hub é uma API que serve para aplicações que necessitam de um fórum 
 ## Funcionalidades 💡
 
 - Cadastrar Tópico
+- Listar todos os Tópicos em ordem de data de criação
+- Listar todos os Tópicos por curso
+- Buscar Tópico por ID
+- Atualizar Tópico
+- Excluir Tópico
 
 ## Tecnologias e Conceitos 🤔
 
