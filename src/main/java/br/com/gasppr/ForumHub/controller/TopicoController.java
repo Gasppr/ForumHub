@@ -17,7 +17,7 @@ public class TopicoController {
 
 
     @Autowired
-    TopicoRespository respository;
+    TopicoRespository repository;
 
     @Transactional
     @PostMapping
@@ -26,10 +26,10 @@ public class TopicoController {
 
         var topico = new Topico(dados);
 
-        var topicoExiste = respository.findByTituloAndMensagem(topico.getTitulo(), topico.getMensagem());
+        var topicoExiste = repository.findByTituloAndMensagem(topico.getTitulo(), topico.getMensagem());
 
         if (!topicoExiste.isPresent()){
-            respository.save(topico);
+            repository.save(topico);
 
             var uri = builder.path("/topicos/${id}").buildAndExpand(topico.getId()).toUri();
 
@@ -44,7 +44,7 @@ public class TopicoController {
     @GetMapping
     public ResponseEntity<Page<DadosListagemDetalhamento>> listagemDeTopicos(@PageableDefault(size = 10)Pageable paginacao){
 
-        var page = respository.findAllTopicos(paginacao).map(DadosListagemDetalhamento::new);
+        var page = repository.findAllTopicos(paginacao).map(DadosListagemDetalhamento::new);
 
 
        return ResponseEntity.ok(page);
@@ -54,9 +54,17 @@ public class TopicoController {
     @GetMapping("/{nomeCurso}")
     public ResponseEntity<Page<DadosListagemDetalhamento>> listagemDeTopicosPorCurso(@PageableDefault(size = 10)Pageable paginacao, @PathVariable String nomeCurso){
 
-        var page = respository.findAllTopicosPorCurso(paginacao,nomeCurso).map(DadosListagemDetalhamento::new);
+        var page = repository.findAllTopicosPorCurso(paginacao,nomeCurso).map(DadosListagemDetalhamento::new);
 
         return ResponseEntity.ok(page);
     }
 
+
+    @GetMapping("topico/{id}")
+    public ResponseEntity buscarTopicoPorId(@PathVariable Long id){
+
+       var topico = repository.getReferenceById(id);
+
+        return ResponseEntity.ok(new DadosListagemDetalhamento(topico));
+    }
 }
