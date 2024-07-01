@@ -1,12 +1,12 @@
 package br.com.gasppr.ForumHub.controller;
 
-import br.com.gasppr.ForumHub.topico.DadosCadastroTopico;
-import br.com.gasppr.ForumHub.topico.DadosDetalhamentoTopico;
-import br.com.gasppr.ForumHub.topico.Topico;
-import br.com.gasppr.ForumHub.topico.TopicoRespository;
+import br.com.gasppr.ForumHub.topico.*;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -40,5 +40,23 @@ public class TopicoController {
 
     }
 
+
+    @GetMapping
+    public ResponseEntity<Page<DadosListagemDetalhamento>> listagemDeTopicos(@PageableDefault(size = 10)Pageable paginacao){
+
+        var page = respository.findAllTopicos(paginacao).map(DadosListagemDetalhamento::new);
+
+
+       return ResponseEntity.ok(page);
+
+    }
+
+    @GetMapping("/{nomeCurso}")
+    public ResponseEntity<Page<DadosListagemDetalhamento>> listagemDeTopicosPorCurso(@PageableDefault(size = 10)Pageable paginacao, @PathVariable String nomeCurso){
+
+        var page = respository.findAllTopicosPorCurso(paginacao,nomeCurso).map(DadosListagemDetalhamento::new);
+
+        return ResponseEntity.ok(page);
+    }
 
 }
