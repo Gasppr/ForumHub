@@ -1,4 +1,4 @@
-package br.com.gasppr.ForumHub.curso;
+package br.com.gasppr.ForumHub.domain.curso;
 
 import jakarta.validation.constraints.NotBlank;
 

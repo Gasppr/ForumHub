@@ -1,4 +1,4 @@
-package br.com.gasppr.ForumHub.topico;
+package br.com.gasppr.ForumHub.domain.topico;
 
 import java.time.LocalDateTime;
 

@@ -1,7 +1,7 @@
-package br.com.gasppr.ForumHub.topico;
+package br.com.gasppr.ForumHub.domain.topico;
 
-import br.com.gasppr.ForumHub.autor.Autor;
-import br.com.gasppr.ForumHub.curso.Curso;
+import br.com.gasppr.ForumHub.domain.autor.Autor;
+import br.com.gasppr.ForumHub.domain.curso.Curso;
 
 import java.time.LocalDateTime;
 

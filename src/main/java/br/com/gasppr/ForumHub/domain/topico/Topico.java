@@ -1,7 +1,7 @@
-package br.com.gasppr.ForumHub.topico;
+package br.com.gasppr.ForumHub.domain.topico;
 
-import br.com.gasppr.ForumHub.autor.Autor;
-import br.com.gasppr.ForumHub.curso.Curso;
+import br.com.gasppr.ForumHub.domain.autor.Autor;
+import br.com.gasppr.ForumHub.domain.curso.Curso;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -9,7 +9,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 
 @Entity(name = "Topico")
 @Table(name = "topicos")

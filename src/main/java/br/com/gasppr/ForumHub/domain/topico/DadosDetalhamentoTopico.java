@@ -1,11 +1,9 @@
-package br.com.gasppr.ForumHub.topico;
+package br.com.gasppr.ForumHub.domain.topico;
 
-import br.com.gasppr.ForumHub.autor.Autor;
-import br.com.gasppr.ForumHub.curso.Curso;
-import jakarta.persistence.Embedded;
+import br.com.gasppr.ForumHub.domain.autor.Autor;
+import br.com.gasppr.ForumHub.domain.curso.Curso;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 
 public record DadosDetalhamentoTopico(
 
