@@ -46,4 +46,31 @@ public class Topico {
         this.autor = dados.autor();
         this.curso = new Curso(dados.curso());
     }
+
+    public void atualizarInformacoes(DadosAtualizandoTopico dados) {
+
+        if(dados.titulo() != null){
+            this.titulo = dados.titulo();
+        }
+
+        if(dados.mensagem() != null){
+            this.mensagem= dados.mensagem();
+        }
+
+        if(dados.dataDeCriacao() != null){
+            this.dataDeCriacao = dados.dataDeCriacao();
+        }
+
+        if(dados.estadoDoTopico() != null){
+            this.estadoDoTopico = dados.estadoDoTopico();
+        }
+
+        if(dados.autor() != null){
+            this.autor = dados.autor();
+        }
+
+        if(dados.curso() != null){
+            this.curso = dados.curso();
+        }
+    }
 }
